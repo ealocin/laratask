@@ -31,4 +31,11 @@ class TasksController extends Controller
 
         return view('tasks.show', compact('task'));
     }
+
+    public function destroy($id)
+    {
+        Task::findOrFail($id)->delete();
+
+        return  redirect('/');
+    }
 }

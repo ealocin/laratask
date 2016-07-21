@@ -14,6 +14,10 @@ Route::get('/', 'HomeController@index');
 
 Route::post('task', 'TasksController@store');
 Route::get('task/{id}', 'TasksController@show');
+Route::delete('task/{id}', 'TasksController@destroy');
+
+Route::post('subtask', 'SubtasksController@store');
+Route::delete('subtask/{id}', 'SubtasksController@destroy');
 
 Route::auth();
 

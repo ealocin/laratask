@@ -7,7 +7,7 @@
         <div class="list-group">
             @foreach($tasks as $task)
                 <a href="/task/{{ $task->id }}" class="list-group-item">
-                    <span class="badge">14</span>
+                    <span class="badge">{{ count($task->subtasks) }}</span>
                     {{ $task->name }}
                 </a>
             @endforeach

@@ -12,5 +12,8 @@
 */
 Route::get('/', 'HomeController@index');
 
+Route::post('task', 'TasksController@store');
+Route::get('task/{id}', 'TasksController@show');
+
 Route::auth();
 

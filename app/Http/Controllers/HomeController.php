@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Task;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $tasks = Task::orderBy('created_at', 'desc')->paginate(5);
+
+        return view('home', compact('tasks'));
     }
 }
